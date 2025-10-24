@@ -287,12 +287,76 @@ body {
 }
 
 .category-content {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    margin-top: 30px;
 }
 
-.category-content.active {
-    display: block;
-    animation: fadeIn 0.5s ease;
+.category-description {
+    background: linear-gradient(135deg, var(--discord-blurple), #7289da);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(88, 101, 242, 0.3);
+}
+
+.category-desc-icon {
+    font-size: 64px;
+    margin-bottom: 15px;
+}
+
+.category-desc-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--discord-white);
+    margin-bottom: 15px;
+}
+
+.category-desc-text {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.commands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.command-card {
+    background: var(--discord-gray);
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid var(--discord-light-gray);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.command-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--discord-blurple);
+    box-shadow: 0 8px 25px rgba(88, 101, 242, 0.3);
+    background: var(--discord-light-gray);
+}
+
+.command-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--discord-blurple);
+    margin-bottom: 12px;
+    font-family: 'Courier New', monospace;
+}
+
+.command-description {
+    font-size: 15px;
+    color: var(--discord-text-muted);
+    line-height: 1.7;
 }
 
 @keyframes fadeIn {
@@ -458,6 +522,30 @@ body {
     
     .command-description {
         font-size: 15px;
+    }
+    
+    .category-desc-icon {
+        font-size: 48px;
+    }
+    
+    .category-desc-title {
+        font-size: 24px;
+    }
+    
+    .category-desc-text {
+        font-size: 14px;
+    }
+    
+    .commands-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .command-card {
+        padding: 20px;
+    }
+    
+    .command-name {
+        font-size: 18px;
     }
     
     .sns-title {
