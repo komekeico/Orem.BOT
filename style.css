@@ -1,0 +1,415 @@
+/* ==================== リセット & ベース ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Discord公式カラー */
+    --discord-blurple: #5865F2;
+    --discord-green: #3BA55C;
+    --discord-dark: #202225;
+    --discord-darker: #1a1c1f;
+    --discord-darkest: #0f1012;
+    --discord-gray: #2f3136;
+    --discord-light-gray: #36393f;
+    --discord-text: #dcddde;
+    --discord-text-muted: #96989d;
+    --discord-white: #ffffff;
+    
+    /* カスタムカラー */
+    --purple-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --blue-gradient: linear-gradient(135deg, #5865F2 0%, #3b5998 100%);
+}
+
+body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--discord-darkest);
+    color: var(--discord-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================== ヒーローセクション ==================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--discord-darkest);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--purple-gradient);
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(88, 101, 242, 0.3) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.bot-icon {
+    font-size: 80px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.bot-name {
+    font-size: 72px;
+    font-weight: 900;
+    background: var(--purple-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -2px;
+}
+
+.hero-description {
+    font-size: 20px;
+    color: var(--discord-text-muted);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.hero-description strong {
+    color: var(--discord-blurple);
+    font-weight: 700;
+}
+
+.invite-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--discord-white);
+    background-color: var(--discord-green);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(59, 165, 92, 0.3);
+}
+
+.invite-button:hover {
+    background-color: #2d8a4d;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(59, 165, 92, 0.4);
+}
+
+.invite-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ==================== 特徴セクション ==================== */
+.features-highlight {
+    padding: 100px 0;
+    background: var(--discord-dark);
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--discord-gray);
+    padding: 40px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--discord-blurple);
+    box-shadow: 0 10px 30px rgba(88, 101, 242, 0.3);
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--discord-white);
+}
+
+.feature-card p {
+    color: var(--discord-text-muted);
+    line-height: 1.7;
+}
+
+/* ==================== コマンドセクション ==================== */
+.commands-section {
+    padding: 100px 0;
+    background: var(--discord-darkest);
+}
+
+.toggle-commands-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--discord-white);
+    background: var(--blue-gradient);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(88, 101, 242, 0.3);
+}
+
+.toggle-commands-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(88, 101, 242, 0.5);
+}
+
+.toggle-commands-btn.active .btn-arrow {
+    transform: rotate(180deg);
+}
+
+.btn-arrow {
+    transition: transform 0.3s ease;
+}
+
+.commands-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.commands-container.active {
+    max-height: 5000px;
+}
+
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.category-tab {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--discord-text-muted);
+    background: var(--discord-gray);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-tab:hover {
+    color: var(--discord-white);
+    background: var(--discord-light-gray);
+}
+
+.category-tab.active {
+    color: var(--discord-white);
+    background: var(--discord-blurple);
+    border-color: var(--discord-blurple);
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+}
+
+.category-content {
+    display: none;
+}
+
+.category-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.feature-item {
+    background: var(--discord-gray);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid var(--discord-blurple);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateX(5px);
+    background: var(--discord-light-gray);
+    box-shadow: 0 5px 20px rgba(88, 101, 242, 0.2);
+}
+
+.feature-item h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--discord-white);
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: var(--discord-text-muted);
+    line-height: 1.6;
+}
+
+/* ==================== フッター ==================== */
+.footer {
+    padding: 60px 0;
+    background: var(--discord-darker);
+    border-top: 1px solid var(--discord-gray);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--discord-white);
+}
+
+.bot-icon-small {
+    font-size: 32px;
+}
+
+.footer-text {
+    color: var(--discord-text-muted);
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: var(--discord-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--discord-blurple);
+}
+
+/* ==================== レスポンシブ ==================== */
+@media (max-width: 768px) {
+    .bot-name {
+        font-size: 48px;
+    }
+    
+    .bot-icon {
+        font-size: 60px;
+    }
+    
+    .hero-description {
+        font-size: 16px;
+    }
+    
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-tabs {
+        flex-direction: column;
+    }
+    
+    .category-tab {
+        width: 100%;
+        text-align: center;
+    }
+}
+
