@@ -413,3 +413,87 @@ body {
     }
 }
 
+
+
+/* ピカチュウアイコン */
+.bot-icon-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 10px 40px rgba(88, 101, 242, 0.4);
+    border: 4px solid var(--discord-blurple);
+}
+
+.bot-icon-small-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* SNSセクション */
+.sns-section {
+    padding: 80px 0;
+    background: var(--discord-dark);
+}
+
+.sns-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    background: var(--purple-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sns-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sns-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--discord-white);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-width: 280px;
+    justify-content: center;
+}
+
+.twitter-button {
+    background: #1DA1F2;
+}
+
+.twitter-button:hover {
+    background: #1a8cd8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(29, 161, 242, 0.4);
+}
+
+.discord-id {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--discord-text);
+    background: var(--discord-gray);
+    border-radius: 8px;
+    min-width: 280px;
+    justify-content: center;
+}
+

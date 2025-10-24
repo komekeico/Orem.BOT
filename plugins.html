@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orem.BOT 拡張機能ストア - プラグインで機能を追加">
+    <title>拡張機能ストア - Orem.BOT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="plugins.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">
+                    <div class="bot-icon-small">🤖</div>
+                    <span>Orem.BOT</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">ホーム</a>
+                    <a href="plugins.html" class="active">拡張機能</a>
+                    <a href="https://discord.gg/meroserver" target="_blank">サーバー</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="plugins-hero">
+        <div class="container">
+            <div class="plugins-hero-content">
+                <h1 class="plugins-title">🔌 拡張機能ストア</h1>
+                <p class="plugins-description">
+                    Orem.BOTの機能をさらに拡張。<br>
+                    コミュニティが作成した多様なプラグインから選んで、<br>
+                    あなたのサーバーをカスタマイズしましょう。
+                </p>
+                
+                <!-- 検索バー -->
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="プラグインを検索...">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フィルターセクション -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-tab active" data-category="all">すべて</button>
+                <button class="filter-tab" data-category="utility">ユーティリティ</button>
+                <button class="filter-tab" data-category="moderation">モデレーション</button>
+                <button class="filter-tab" data-category="entertainment">エンタメ</button>
+                <button class="filter-tab" data-category="economy">経済</button>
+                <button class="filter-tab" data-category="analytics">分析</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- プラグイン一覧 -->
+    <section class="plugins-grid-section">
+        <div class="container">
+            <div class="plugins-grid" id="pluginsGrid">
+                <!-- プラグインカードはJavaScriptで生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- プラグイン詳細モーダル -->
+    <div class="modal" id="pluginModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div id="modalBody">
+                <!-- モーダル内容はJavaScriptで生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="bot-icon-small">🤖</div>
+                    <span>Orem.BOT</span>
+                </div>
+                <p class="footer-text">© 2025 Orem.BOT. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://discord.gg/meroserver" target="_blank">サーバー</a>
+                    <a href="https://2052-i29ru9d9dohdwieuokudt-26c094e1.manus-asia.computer" target="_blank">ダッシュボード</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="plugins.js"></script>
+</body>
+</html>
+
