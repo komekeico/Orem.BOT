@@ -383,20 +383,53 @@ body {
 
 /* ==================== レスポンシブ ==================== */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
     .bot-name {
-        font-size: 48px;
+        font-size: 56px;
     }
     
     .bot-icon {
-        font-size: 60px;
+        font-size: 70px;
+    }
+    
+    .bot-icon-image {
+        width: 180px;
+        height: 180px;
     }
     
     .hero-description {
-        font-size: 16px;
+        font-size: 18px;
+        padding: 0 10px;
+    }
+    
+    .invite-button {
+        font-size: 20px;
+        padding: 18px 45px;
     }
     
     .feature-cards {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .feature-card {
+        padding: 30px;
+    }
+    
+    .feature-card h3 {
+        font-size: 22px;
+    }
+    
+    .feature-card p {
+        font-size: 16px;
+    }
+    
+    .toggle-commands-btn {
+        font-size: 18px;
+        padding: 18px 35px;
     }
     
     .features-grid {
@@ -405,11 +438,37 @@ body {
     
     .category-tabs {
         flex-direction: column;
+        gap: 10px;
     }
     
     .category-tab {
         width: 100%;
         text-align: center;
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+    
+    .command-card {
+        padding: 20px;
+    }
+    
+    .command-name {
+        font-size: 18px;
+    }
+    
+    .command-description {
+        font-size: 15px;
+    }
+    
+    .sns-title {
+        font-size: 32px;
+    }
+    
+    .sns-button,
+    .discord-id {
+        font-size: 16px;
+        padding: 14px 28px;
+        min-width: 260px;
     }
 }
 
